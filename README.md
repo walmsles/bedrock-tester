@@ -17,7 +17,7 @@ So the full "extra" configuration you need for reasoning to be returned is:
 
 ### Test Results
 
-The test results cabn be achieved by running the script.  The current script runs models against us-east-1 but have also tested in my home region of ap-southeast-2.
+The test results cabn be achieved by running the script.  The current script runs models against us-east-1 but have also tested in my home region of ap-southeast-2.  The run shown below is **without** `"display": "summarized"` in place and shows the lack of reasoning output for 4.7/8 models (only get a reasoning signature response).Z
  
 ```bash
 ##############################################################
