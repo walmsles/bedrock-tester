@@ -34,7 +34,7 @@ def main():
     if mode == "adaptive":
         effort = knob or "high"
         extra = {
-            "thinking": {"type": "adaptive"},
+            "thinking": {"type": "adaptive", "display" : "summarized"},
             "output_config": {"effort": effort},
         }
         print(f"[CONFIG] model={model_id} mode=adaptive effort={effort}")

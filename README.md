@@ -2,7 +2,16 @@
 
 This repo is used to run various claude models to determine how well thinking modes are handled by Amazon Bedrock.  This repo was built as I have noticed that Anthropic CLaude OPus 4.7 and 4.8 are not returning any useful thinking on invoke.  This script tests various models 4.6 - 4.8 and makes a simple request and expects to have thinking returned by Amazon Bedrock interaction.
 
-Current results as of June 28 2026 - Bedrock is not returning meaningful thining text as part of the COnverse API inference interaction.
+Current results as of June 28 2026 - Bedrock is not returning meaningful thining text as part of the COnverse API inference interaction when you follow all the AWS documentation.  I found an additional reference on claude code issue [here](https://github.com/anthropics/claude-code/issues/63358) which outlines the fact that with adaptive thinking the claude API defaults `"display": "ommited"`.  Therefore you **must** pass in `"display": "summarized"` in order to have the model resoning returned.
+
+So the full "extra" configuration you need for reasoning to be returned is:
+
+```json
+{
+  "thinking":      { "type": "adaptive", "display": "summarized" },
+  "output_config": { "effort": "xhigh" }
+}
+```
 
 ### Test Results
 
